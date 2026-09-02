@@ -9,11 +9,20 @@ These steps assume (1) you have installed Python, VS Code, HAWC2/HAWCStab2, etc.
 per the instructions given in the course and (2) that you are familiar with
 conda environments, installing Python packages, etc.
 
-1. (Recommended) Create and activate a venv or conda environment called `lac` with Python 3.13.
-1. Install `a0pack` editably. In the same directory as `pyproject.toml`, `pip install -e .`.
+**Use Python to make a HAWC2S htc file**
+
+1. (Recommended) Create and activate a venv or conda environment called `lac` with Python 3.13.  
+   * E.g., in conda: `conda create -n lac python=3.13 -y`, then `conda activate lac`.
+1. Install package editably: 
+   * Navigate to folder containing `pyproject.toml`.
+   * Installation command: `pip install -e .`
 1. Change into scripts folder: `cd scripts`  
 1. Run the Python script: `python make_hawc2s.py`. This generates a HAWC2S input file
    `htc_hawc2s/dtu_10mw_hawc2s_1wsp.htc`.  
-1. Run HAWC2S on the newly generated input file:  `hawc2s htc_hawc2s/dtu_10mw_hawc2s_1wsp.htc`
+
+**Run HAWC2S on the generated file**
+
+1. CD into the `hawc_files` folder.
+1. Run HAWC2S on the generated input file:  `hawc2s htc_hawc2s/dtu_10mw_hawc2s_1wsp.htc`
 1. If file `res_hawc2s/dtu_10mw_hawc2s_1wsp.pwr` is created with 1 line of data,
    it's working!
